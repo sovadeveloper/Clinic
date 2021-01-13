@@ -1,8 +1,5 @@
 package com.learning;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Animal {
     private String petName;
     private Client client;

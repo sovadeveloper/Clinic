@@ -1,15 +1,10 @@
 package com.learning;
 
-import javafx.scene.AmbientLight;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class Client {
     private String clientName;
     private Animal animal;
 
-    public Client() {
+    public Client(){
 
     }
 

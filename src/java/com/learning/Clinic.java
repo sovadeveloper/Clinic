@@ -6,8 +6,8 @@ import java.util.Scanner;
 
 public class Clinic{
     Scanner scn = new Scanner(System.in);
-    private List<Client> clients = new ArrayList<Client>();
-    private List<Animal> pets = new ArrayList<Animal>();
+    public List<Client> clients = new ArrayList<Client>();
+    public List<Animal> pets = new ArrayList<Animal>();
 
     public void start(){
         boolean i = true;
@@ -73,7 +73,7 @@ public class Clinic{
         }
     }
 
-    private void addClient(String name, String petName){
+    public void addClient(String name, String petName){
         Client client = new Client(name);
         Animal animal = new Animal(petName);
         client.setAnimal(animal);
@@ -82,7 +82,7 @@ public class Clinic{
         pets.add(animal);
     }
 
-    private void deleteClient(String name){
+    public void deleteClient(String name){
         for(int i = 0; i < clients.size(); i++){
             if(clients.get(i).getClientName().equals(name)){
                 for(int j = 0; j < pets.size(); j++){
@@ -95,7 +95,7 @@ public class Clinic{
         }
     }
 
-    private void databaseOutput(){
+    public void databaseOutput(){
         int i = 1;
         for(Client item : clients){
             System.out.println(i + ": " + item.getClientName() + " - " + item.getAnimal().getPetName());
@@ -103,7 +103,7 @@ public class Clinic{
         }
     }
 
-    private void petsOutput(){
+    public void petsOutput(){
         for(Animal item: pets){
             System.out.println(item.getPetName());
         }
@@ -117,7 +117,7 @@ public class Clinic{
         }
     }
 
-    private void searchClient(String namePet){
+    public void searchClient(String namePet){
         for(int i = 0; i < pets.size(); i++){
             if(pets.get(i).getPetName().equals(namePet)){
                 System.out.println(pets.get(i).getClient().getClientName());
@@ -125,7 +125,7 @@ public class Clinic{
         }
     }
 
-    private void renameClient(String name, String newName){
+    public void renameClient(String name, String newName){
         for(int i = 0; i < clients.size(); i++){
             if(clients.get(i).getClientName().equals(name)){
                 clients.get(i).setClientName(newName);
@@ -133,7 +133,7 @@ public class Clinic{
         }
     }
 
-    private void renameAnimal(String namePet, String newNamePet){
+    public void renameAnimal(String namePet, String newNamePet){
         for(int i = 0; i < pets.size(); i++){
             if(pets.get(i).getPetName().equals(namePet)){
                 pets.get(i).setPetName(newNamePet);

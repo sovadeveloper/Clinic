@@ -1,23 +1,27 @@
 package com.learning;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Client {
     private String clientName;
-    private Animal animal;
+    public List<Animal> anim;
 
-    public Client(){
+    public Client()   {
 
     }
 
     public Client(String clientName) {
         this.clientName = clientName;
+        anim = new ArrayList<>();
     }
 
-    public Animal getAnimal() {
-        return animal;
+    public List<Animal> getAnim() {
+        return anim;
     }
 
-    public void setAnimal(Animal animal) {
-        this.animal = animal;
+    public void setAnim(List<Animal> anim) {
+        this.anim = anim;
     }
 
     public String getClientName() {

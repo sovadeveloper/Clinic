@@ -10,81 +10,71 @@ public class Clinic{
     public List<Animal> pets = new ArrayList<Animal>();
 
     public void start(){
-        boolean i = true;
-
-        while (i){
-            System.out.println("1: ADD - добавить клиента");
-            System.out.println("2: ADDA - добавить питомца");
-            System.out.println("3: DELETE - удалить клиента");
-            System.out.println("4: DELETEP - удалить питомца");
-            System.out.println("5: CONC - добавить нового питомца клиенту");
-            System.out.println("6: OUTPUT - вывести всех клиентов");
-            System.out.println("7: OUTPUTP - вывести всех клиентов");
-            System.out.println("8: SEARCHC - поиск клиента по питомцу");
-            System.out.println("9: SEARCHA - поиск питомца по клиенту");
-            System.out.println("10: RENAMEC - редактирование клиента");
-            System.out.println("11: RENAMEA - редактирование питомца");
-            System.out.println("12: EXIT - выйти из программы");
+        while (true){
+            preview();
             String choice = scn.nextLine();
             switch (choice.toLowerCase()){
                 case "add":
                     System.out.println("Введите имя клиента: ");
                     addClient(scn.nextLine());
-                    i = true;
                     break;
                 case "adda":
                     System.out.println("Введите имя питомца");
                     addNewAnimal(scn.nextLine());
-                    i = true;
                     break;
                 case "delete":
                     System.out.println("Введите имя клиента, которого хотите удалить из списка");
                     deleteClient(scn.nextLine());
-                    i = true;
                     break;
                 case "deletep":
                     System.out.println("Введите имя питомца, котрого хотите удалить");
                     deletePet(scn.nextLine());
-                    i = true;
                     break;
                 case "conc":
                     System.out.println("Введите имя клиента, которому хотите добавить питомца и имя питомца");
                     concatenate(scn.nextLine(), scn.nextLine());
-                    i = true;
                     break;
                 case "output":
                     databaseOutput();
-                    i = true;
                     break;
                 case "outputp":
                     petsOutput();
-                    i = true;
                     break;
                 case "searchc":
                     System.out.println("Введите имя питомца, что-бы найти хозяина");
                     searchClient(scn.nextLine());
-                    i = true;
                     break;
                 case "searcha":
                     System.out.println("Введите имя хозяина, что-бы найти питомца");
                     searchAnimal(scn.nextLine());
-                    i = true;
                     break;
                 case "renamec":
                     System.out.println("Введите имя клиента для редактирования");
                     renameClient(scn.nextLine(), scn.nextLine());
-                    i = true;
                     break;
                 case "renamea":
                     System.out.println("Введите имя питомца для редактирования");
                     renameAnimal(scn.nextLine(), scn.nextLine());
-                    i = true;
                     break;
                 case "exit":
-                    i = false;
-                    break;
+                    return;
             }
         }
+    }
+
+    public void preview(){
+        System.out.println("1: ADD - добавить клиента");
+        System.out.println("2: ADDA - добавить питомца");
+        System.out.println("3: DELETE - удалить клиента");
+        System.out.println("4: DELETEP - удалить питомца");
+        System.out.println("5: CONC - добавить нового питомца клиенту");
+        System.out.println("6: OUTPUT - вывести всех клиентов");
+        System.out.println("7: OUTPUTP - вывести всех клиентов");
+        System.out.println("8: SEARCHC - поиск клиента по питомцу");
+        System.out.println("9: SEARCHA - поиск питомца по клиенту");
+        System.out.println("10: RENAMEC - редактирование клиента");
+        System.out.println("11: RENAMEA - редактирование питомца");
+        System.out.println("12: EXIT - выйти из программы");
     }
 
     public void addClient(String name){

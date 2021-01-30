@@ -1,8 +1,6 @@
 package com.learning;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Clinic{
     Scanner scn = new Scanner(System.in);
@@ -19,8 +17,8 @@ public class Clinic{
                     addClient(scn.nextLine());
                     break;
                 case "adda":
-                    System.out.println("Введите имя питомца");
-                    addNewAnimal(scn.nextLine());
+                    System.out.println("Введите имя питомца и болезнь: broke, temperature, poisoning, rabies, cystitis; После введите тип: cat, dog, rat, hamster");
+                    addNewAnimal(scn.nextLine(), scn.nextLine());
                     break;
                 case "delete":
                     System.out.println("Введите имя клиента, которого хотите удалить из списка");
@@ -82,9 +80,55 @@ public class Clinic{
         clients.add(client);
     }
 
-    public void addNewAnimal(String animalName){
-        Animal animal = new Animal(animalName);
-        pets.add(animal);
+    public DiseaseType detectDisease(String type){
+        DiseaseType dis;
+        switch (type){
+            case "broke":
+                dis = DiseaseType.BROKE;
+                break;
+            case "temperature":
+                dis = DiseaseType.TEMPERATURE;
+                break;
+            case "poisoning":
+                dis = DiseaseType.POISONING;
+                break;
+            case "rabies":
+                dis = DiseaseType.RABIES;
+                break;
+            case "cystits":
+                dis = DiseaseType.CYSTITIS;
+                break;
+            default:
+                dis = null;
+        }
+        return dis;
+    }
+
+    public void addNewAnimal(String animalName, String type){
+        Animal animal;
+        String choice = scn.nextLine();
+        switch (choice.toLowerCase()){
+            case "cat":
+                animal = new Cat(animalName);
+                animal.setDiseaseType(detectDisease(type));
+                pets.add(animal);
+                break;
+            case "dog":
+                animal = new Dog(animalName);
+                animal.setDiseaseType(detectDisease(type));
+                pets.add(animal);
+                break;
+            case "rat":
+                animal = new Rat(animalName);
+                animal.setDiseaseType(detectDisease(type));
+                pets.add(animal);
+                break;
+            case "hamster":
+                animal = new Hamster(animalName);
+                animal.setDiseaseType(detectDisease(type));
+                pets.add(animal);
+                break;
+        }
     }
 
     public void concatenate(String name, String animalName){
@@ -145,7 +189,7 @@ public class Clinic{
     public void petsOutput(){
         int i = 1;
         for(Animal item: pets){
-            System.out.println(i + ": " + item.getPetName());
+            System.out.println(i + ": " + item.getPetName() + " - " + item.getVoice() + "; Болезнь: " + item.getDiseaseType());
             i++;
         }
     }
@@ -184,22 +228,4 @@ public class Clinic{
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-    public List<Client> getClients() {
-        return clients;
-    }
-
-    public void setClients(ArrayList<Client> clients) {
-        this.clients = clients;
-    }
 }

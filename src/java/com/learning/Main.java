@@ -1,9 +1,11 @@
 package com.learning;
 
+import com.learning.model.Interface;
+
 public class Main {
 
     public static void main(String[] args) {
-        Clinic clinic = new Clinic();
-        clinic.start();
+        Interface inf = new Interface();
+        inf.start();
     }
 }

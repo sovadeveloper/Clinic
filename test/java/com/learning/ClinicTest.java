@@ -9,10 +9,4 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ClinicTest {
-    Clinic cl = new Clinic();
-    String first = "First";
-    String second = "Second";
-    String third = "Third";
-
-
 }

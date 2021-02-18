@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Client {
     private String clientName;
+    private Long clientID;
     public List<Animal> anim;
 
     public Client()   {

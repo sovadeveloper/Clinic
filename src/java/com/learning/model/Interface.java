@@ -14,7 +14,7 @@ public class Interface {
             String choice = scn.nextLine();
             switch (choice.toLowerCase()){
                 case "add":
-                    System.out.println("Введите имя клиента: ");
+                    System.out.println("Введите имя клиента и его ID: ");
                     cl.addClient(scn.nextLine());
                     break;
                 case "adda":
@@ -61,7 +61,7 @@ public class Interface {
         }
     }
 
-    public void preview(){
+    private void preview(){
         System.out.println("1: ADD - добавить клиента");
         System.out.println("2: ADDA - добавить питомца");
         System.out.println("3: DELETE - удалить клиента");

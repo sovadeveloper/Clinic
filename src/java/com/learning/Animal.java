@@ -3,6 +3,8 @@ package com.learning;
 public class Animal {
     private String petName;
     private Client client;
+    private int petId;
+    private int clientId;
     private String voice;
     private DiseaseType diseaseType;
 
@@ -20,6 +22,26 @@ public class Animal {
 
     public void setClient(Client client) {
         this.client = client;
+    }
+
+    public int getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(int clientId) {
+        this.clientId = clientId;
+    }
+
+    public int getPetId() {
+        return petId;
+    }
+
+    public void setPetId(int petId) {
+        this.petId = petId;
+    }
+
+    public void setVoice(String voice) {
+        this.voice = voice;
     }
 
     public DiseaseType getDiseaseType() {

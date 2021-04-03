@@ -39,21 +39,42 @@
                     </div>
                     <input type="submit" id="btn" value="Отправить" class="btn btn-dark" />
                 </form>
+                <form method="post" id="ajax_form1" action="">
+                    <h2>Change client name</h2>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Client ID</label>
+                        <input type="text" name="clientID" class="form-control" id="exampleFormControlInput3" placeholder="ClientID">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Client name</label>
+                        <input type="text" name="clientName1" class="form-control" id="exampleFormControlInput4" placeholder="Client name">
+                    </div>
+                    <input type="submit" id="btn1" value="Изменить имя клиента" class="btn btn-dark" />
+                </form>
+
+                <form method="post" id="ajax_form2" action="">
+                    <h2>Delete client</h2>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Client ID</label>
+                        <input type="text" name="clientID1" class="form-control" id="exampleFormControlInput5" placeholder="ClientID">
+                    </div>
+                    <input type="submit" id="btn2" value="Удалить клиента" class="btn btn-dark" />
+                </form>
             </div>
         </div>
 
         <br>
         <br>
         <br>
-        <button id = "btnResponse">Кнопка для получения инфы</button>
+        <button class="btn btn-dark" id = "btnResponse">Кнопка для получения инфы</button>
         <br>
         <br>
         <br>
 
-        <div class="row align-items-center">
+        <div class="row align-items-center" >
             <div class="col-5">
                 <p>It contains in the database</p>
-                <div class="list-group container">
+                <div class="list-group" id="container">
 
                 </div>
             </div>

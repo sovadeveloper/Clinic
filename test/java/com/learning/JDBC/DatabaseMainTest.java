@@ -30,7 +30,7 @@ class DatabaseMainTest {
     @Test
     void deleteClientFromDB() throws ClassNotFoundException {
         DatabaseMain db = new DatabaseMain();
-        db.deleteClientFromDB(1);
+        db.deleteClientFromDB(34);
     }
 
     @Test
@@ -42,7 +42,7 @@ class DatabaseMainTest {
     @Test
     void renameClientInDB() throws ClassNotFoundException {
         DatabaseMain db = new DatabaseMain();
-        db.renameClientInDB(9, "Гоша");
+        db.renameClientInDB(30, "Гоша");
     }
 
     @Test

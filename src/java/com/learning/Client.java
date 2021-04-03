@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Client {
     private String clientName;
-    private int clientID;
+    private Integer clientID;
     public List<Animal> anim;
 
     public Client()   {
@@ -22,11 +22,11 @@ public class Client {
         this.clientID = clientID;
     }
 
-    public int getClientID() {
+    public Integer getClientID() {
         return clientID;
     }
 
-    public void setClientID(int clientID) {
+    public void setClientID(Integer clientID) {
         this.clientID = clientID;
     }
 

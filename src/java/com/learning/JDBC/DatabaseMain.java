@@ -17,10 +17,11 @@ public class DatabaseMain {
     List<Animal> petsRS = new ArrayList<>();
 
     public void setClientInDB(String name) throws ClassNotFoundException {
-        String query = "insert into clientbase(name) VALUES ('" + name + "')";
+        String query = "insert into clientbase(name) VALUES (?)";
         Class.forName("org.postgresql.Driver");
         try (Connection con = DriverManager.getConnection(url, login, password);
              PreparedStatement preStat = con.prepareStatement(query)) {
+            preStat.setString(1, name);
 
             preStat.executeUpdate();
         } catch (SQLException e) {
